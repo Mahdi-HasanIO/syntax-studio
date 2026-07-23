@@ -33,6 +33,9 @@ typedef struct ASTNode
     /* Identifier / Operator / Literal */
     char *text;
 
+    /* Inferred / declared type used by semantic analysis */
+    char *data_type;
+
     /* Source Line Number */
     int line;
 

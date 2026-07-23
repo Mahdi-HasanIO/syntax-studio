@@ -25,6 +25,8 @@ ASTNode *create_node(NodeType type, char *text)
     else
         node->text = NULL;
 
+    node->data_type = NULL;
+
     node->line = line_number;
 
     node->left = NULL;
@@ -58,8 +60,9 @@ void print_ast(ASTNode *node, int level)
                 break;
 
             case NODE_DECLARATION:
-                printf("DECLARATION (%s)\n",
-                       node->text ? node->text : "");
+                printf("DECLARATION (%s : %s)\n",
+                       node->text ? node->text : "",
+                       node->data_type ? node->data_type : "?");
                 break;
 
             case NODE_ASSIGNMENT:
@@ -135,6 +138,11 @@ void free_ast(ASTNode *node)
     if (node->text != NULL)
     {
         free(node->text);
+    }
+
+    if (node->data_type != NULL)
+    {
+        free(node->data_type);
     }
 
     free(node);

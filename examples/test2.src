@@ -1,21 +1,10 @@
-int a;
-int b;
+int x;
 bool flag;
 
-a = 20;
-b = 5;
 flag = true;
+x = flag;
 
-if (a > b)
+if (x)
 {
-    print a;
-}
-else
-{
-    print b;
-}
-
-while (b > 0)
-{
-    b = b - 1;
+    print x;
 }

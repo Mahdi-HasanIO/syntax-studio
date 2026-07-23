@@ -15,7 +15,10 @@ YACC_OUT_H = parser.tab.h
 
 SRC = \
 	src/main.c \
-	src/ast/ast.c
+	src/ast/ast.c \
+	src/semantic/semantic.c \
+	src/symbol_table/symbol_table.c \
+	src/codegen/tac.c
 
 all: $(TARGET)
 

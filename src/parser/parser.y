@@ -36,6 +36,7 @@ ASTNode *root = NULL;
 %type <node> WhileStatement
 %type <node> PrintStatement
 %type <node> Expression
+%type <sval> Type
 
 %token INT FLOAT BOOL
 %token IF ELSE WHILE PRINT
@@ -139,13 +140,23 @@ Declaration
     : Type ID SEMICOLON
     {
         $$ = create_node(NODE_DECLARATION, $2);
+        $$->data_type = $1;
     }
     ;
 
 Type
     : INT
+    {
+        $$ = strdup("int");
+    }
     | FLOAT
+    {
+        $$ = strdup("float");
+    }
     | BOOL
+    {
+        $$ = strdup("bool");
+    }
     ;
 
 Assignment

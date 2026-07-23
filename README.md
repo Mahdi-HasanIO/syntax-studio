@@ -9,7 +9,7 @@
 
 # Project Goal
 
-Syntax Studio is a mini compiler developed using **Flex** and **Bison**. It implements the complete front-end of a compiler, including lexical analysis, syntax analysis, abstract syntax tree (AST) construction, semantic analysis, and Three Address Code (TAC) generation.
+Syntax Studio is a mini compiler developed using **Flex** and **Bison**. It implements the front-end of a compiler, including lexical analysis, syntax analysis, abstract syntax tree (AST) construction, semantic analysis, symbol table management, and Three Address Code (TAC) generation.
 
 The project follows the compiler design principles taught in the Compiler Construction Lab course.
 
@@ -54,6 +54,9 @@ Syntax Analyzer (Bison)
       │
       ▼
 Abstract Syntax Tree (AST)
+      │
+      ▼
+Symbol Table Construction
       │
       ▼
 Semantic Analysis
@@ -192,6 +195,8 @@ You can also test other example programs:
 ./compiler examples/test3.src
 ```
 
+When the input is valid, the compiler prints the parsed AST, runs semantic analysis, and then emits TAC.
+
 # Development Status
 
 | Module | Status |
@@ -201,10 +206,10 @@ You can also test other example programs:
 | Lexer | ✅ Completed |
 | Parser | ✅ Completed |
 | AST | ✅ Completed |
-| Symbol Table | ⏳ Pending |
-| Semantic Analysis | ⏳ Pending |
-| TAC Generation | ⏳ Pending |
-| Testing | 🔄 In Progress |
+| Symbol Table | ✅ Completed |
+| Semantic Analysis | ✅ Completed |
+| TAC Generation | ✅ Completed |
+| Example Tests | 🔄 In Progress |
 | Documentation | 🔄 In Progress |
 
 ---
@@ -231,6 +236,8 @@ This project demonstrates the implementation of the major phases of a compiler:
 - Symbol Table Management
 - Semantic Analysis
 - Intermediate Code Generation (Three Address Code)
+
+The current implementation covers all of these stages for the supported language subset.
 
 ---
 

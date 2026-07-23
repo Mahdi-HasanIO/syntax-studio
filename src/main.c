@@ -2,6 +2,8 @@
 #include <stdlib.h>
 
 #include "ast/ast.h"
+#include "semantic/semantic.h"
+#include "codegen/tac.h"
 
 extern FILE *yyin;
 extern int yyparse();
@@ -36,6 +38,29 @@ int main(int argc, char *argv[])
         if (root != NULL)
         {
             print_ast(root, 0);
+
+            printf("\n====================================\n");
+            printf("Semantic Analysis\n");
+            printf("====================================\n\n");
+
+            int errors = analyze_semantics(root);
+
+            if (errors > 0)
+            {
+                printf("\n%d semantic error(s) found. Skipping code generation.\n",
+                       errors);
+            }
+            else
+            {
+                printf("No semantic errors found.\n");
+
+                printf("\n====================================\n");
+                printf("Three Address Code\n");
+                printf("====================================\n\n");
+
+                generate_tac(root);
+            }
+
             free_ast(root);
         }
     }
