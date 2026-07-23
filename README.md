@@ -179,17 +179,18 @@ make
 
 # Run
 
-```bash
-./compiler
-```
-
-Later, the compiler will also support:
+Run the compiler with a source program:
 
 ```bash
-./compiler examples/sample.src
+./compiler examples/test1.src
 ```
 
----
+You can also test other example programs:
+
+```bash
+./compiler examples/test2.src
+./compiler examples/test3.src
+```
 
 # Development Status
 
@@ -197,14 +198,14 @@ Later, the compiler will also support:
 |---------|--------|
 | Project Structure | ✅ Completed |
 | Build System | ✅ Completed |
-| Lexer | 🔄 In Progress |
-| Parser | ⏳ Pending |
-| AST | ⏳ Pending |
+| Lexer | ✅ Completed |
+| Parser | ✅ Completed |
+| AST | ✅ Completed |
 | Symbol Table | ⏳ Pending |
 | Semantic Analysis | ⏳ Pending |
 | TAC Generation | ⏳ Pending |
-| Testing | ⏳ Pending |
-| Documentation | ⏳ Pending |
+| Testing | 🔄 In Progress |
+| Documentation | 🔄 In Progress |
 
 ---
 
