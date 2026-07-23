@@ -197,6 +197,24 @@ You can also test other example programs:
 
 When the input is valid, the compiler prints the parsed AST, runs semantic analysis, and then emits TAC.
 
+## GUI
+
+Syntax Studio also includes a Tkinter GUI for loading or typing a `.src` program and viewing the AST, semantic analysis result, TAC, and compiler errors in separate tabs.
+
+Build the compiler first:
+
+```bash
+make
+```
+
+Then launch the GUI from the project root:
+
+```bash
+python3 gui/app.py
+```
+
+If the compiler binary is missing, the GUI will warn you and ask you to run `make` first.
+
 # Development Status
 
 | Module | Status |
